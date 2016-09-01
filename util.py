@@ -12,7 +12,7 @@ from collections import deque
 def matrix_multiply(x, y):
     # general solution to matrices of any compatible size
     # fun with nested comprehensions and argument unpacking!
-    return [[sum(a * b for (a,b) in zip(row,col)) for col in zip(*y)] for row in x]
+    return [[sum(a * b for (a, b) in zip(row, col)) for col in zip(*y)] for row in x]
 
 # Problem 2, 3
 
@@ -20,66 +20,68 @@ def matrix_multiply(x, y):
 class MyQueue:
 
     def __init__(self):
-        pass
+        self.queue = deque()
 
     def push(self, val):
-        pass
+        self.queue.append(val)
 
     def pop(self):
-        pass
+        return self.queue.popleft() if len(self.queue) != 0 else None
 
     def __eq__(self, other):
-        pass
+        return list(self.queue) == list(other.queue)
 
     def __ne__(self, other):
-        pass
+        return list(self.queue) != list(other.queue)
 
     def __str__(self):
-        pass
+        return str(list(self.queue))
 
 
 class MyStack:
 
     def __init__(self):
-        pass
+        self.stack = deque()
 
     def push(self, val):
-        pass
+        self.stack.append(val)
 
     def pop(self):
-        pass
+        return self.stack.pop() if len(self.stack) != 0 else None
 
     def __eq__(self, other):
-        pass
+        return list(self.stack) == list(other.stack)
 
     def __ne__(self, other):
-        pass
+        return list(self.stack) != list(other.stack)
 
     def __str__(self):
-        pass
+        return str(list(self.stack))
 
 # Problem 4
 
 
 def add_position_iter(lst, number_from=0):
-    pass
+    return [n + i + number_from for i, n in enumerate(lst)]
 
 
 def add_position_recur(lst, number_from=0):
-    pass
+    def f(l, n, i):
+        return [l[0] + n + i] + f(l[1:], n, i + 1) if len(l) > 1 else [l[0] + n + i]
+    return f(lst, number_from, 0)
 
 
 def add_position_map(lst, number_from=0):
-    pass
-
+    return map(lambda (i,x): x + i + number_from, enumerate(lst))
 # Problem 5
 
 
 def remove_course(roster, student, course):
-    pass
+    roster[student].remove(course)
+    return roster
 
 # Problem 6
 
 
 def copy_remove_course(roster, student, course):
-    pass
+    return remove_course(copy.deepcopy(roster), student, course)
