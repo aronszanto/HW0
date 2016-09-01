@@ -27,7 +27,7 @@ https://www.dropbox.com/s/9eamgwnohs82e8c/tutorial.html
 
 http://wiki.python.org/moin/BeginnersGuide
 
-Complete the definitions of the required classes and functions by editing `util.py`. Alternatively, you can use any other editor and only use the command line to run the files. To test your code, add a main function to `util.py`, and add to it a call the method you want to test. The assignment file HW0.py can also be used to run tests directly: 
+Complete the definitions of the required classes and functions by editing `util.py`. Alternatively, you can use any other editor and only use the command line to run the files. To test your code, add a main function to `util.py`, and add to it a call the method you want to test. The assignment file HW0.py can also be used to run tests directly:
 
      > python HW0.py
 
@@ -44,7 +44,7 @@ Write a function called `matrix_multiply` which multiplies two 2-dimensional lis
 
 
 ```python
-mm = util.matrix_multiply([[1, 2], [3, 4]], [[4, 3], [2, 1]]) 
+mm = util.matrix_multiply([[1, 2], [3, 4]], [[4, 3], [2, 1]])
 # should evaluate to
 assert(mm == [[8, 5], [20, 13]])
 ```
