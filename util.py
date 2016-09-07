@@ -72,7 +72,7 @@ def add_position_recur(lst, number_from=0):
 
 
 def add_position_map(lst, number_from=0):
-    return map(lambda (i,x): x + i + number_from, enumerate(lst))
+    return map(lambda (i, x): x + i + number_from, enumerate(lst))
 # Problem 5
 
 
